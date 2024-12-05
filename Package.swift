@@ -1,11 +1,12 @@
 // swift-tools-version:5.5
+
 import PackageDescription
 
 let package = Package(
     name: "TreeSitterOBJC",
+    platforms: [.macOS(.v10_13), .iOS(.v11)],
     products: [
         .library(name: "TreeSitterOBJC",
-                 type: .dynamic,
                  targets: ["TreeSitterOBJC"]),
     ],
     targets: [
@@ -34,6 +35,5 @@ let package = Package(
                 publicHeadersPath: "./bindings/swift/TreeSitterOBJC",
                 cSettings: [.headerSearchPath("src")]
                ),
-    ],
-    cLanguageStandard: .c99
+    ]
 )
